@@ -1,5 +1,6 @@
 package Controlador;
 
+import Modelo.GitConnect;
 import Vista.*;
 import Modelo.Usuario;
 import Modelo.UsuarioDAO;
@@ -19,6 +20,7 @@ public class ControladorHome implements ActionListener {
     public ControladorHome(Home inicio, Usuario usuario) {
         this.inicio = inicio;
         this.usuario = usuario;
+        
         //MENU GESTIONAR
         this.inicio.subUsuario.addActionListener(this);
         this.inicio.subStock.addActionListener(this);

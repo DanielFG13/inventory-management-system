@@ -50,6 +50,5 @@ public class ControladorLogin implements ActionListener {
                 JOptionPane.showMessageDialog(login, "Verifique los datos ingresados");
             }
         }
-    } 
-    
+    }     
 }

@@ -1,6 +1,8 @@
 package Vista;
 
 import Controlador.ControladorLogin;
+import Modelo.GitConnect;
+import Modelo.VersionLocal;
 
 /**
  *
@@ -103,6 +105,14 @@ public class Login extends javax.swing.JFrame {
        ControladorLogin controlador = new ControladorLogin(login);
        login.setVisible(true);
        login.setLocationRelativeTo(null);
+       String username = "danielcode66";
+       String password = "3823140300aJ";
+       java.net.URL url = null;
+       String versionRemote = GitConnect.getVersion(url, username, password);
+       String versionLocal = VersionLocal.leerVersionLocal();
+       if(!"Error".equals(versionRemote) && !versionRemote.equals(versionLocal)) {
+           new NuevaVersion(versionRemote).setVisible(true);
+       }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
